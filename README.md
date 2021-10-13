@@ -15,14 +15,21 @@ mod tests {
   #[test]
   fn find_on_sorted() {
     let mut sorted = vec![1, 2, 3, 4, 5, 6, 7, 8, 9];
+    let find = sorted.stalin_find(3);
+    assert!(find.is_some());
     assert_eq!(
-      sorted.stalin_find(3),
+      find,
       Some(1),
     );
     assert_eq!(
       sorted,
       vec![1, 3, 4, 6, 7, 8, 9],
     );
+    if let Some(find_3) = find {
+      assert_eq!(
+        3, sorted[find_3]
+      );
+    }
   }
 
   #[test]
@@ -36,6 +43,11 @@ mod tests {
       unsorted,
       vec![33, 55, 3, 7657, 7, 8],
     );
+    if let Some(find_7) = unsorted.stalin_find(7) {
+      assert_eq!(
+        7, unsorted[find_7]
+      );
+    }
   }
 
   #[test]
