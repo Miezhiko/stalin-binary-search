@@ -3,7 +3,7 @@ Stalin Binary Search
 
 Idea is based on Stalin Sort ![ss](https://i.redd.it/x9triplll1v11.jpg)
 
-It's alike binary search but any checking element which is not what want is eliminated.
+It's alike binary search but any checking element which is not target one is eliminated.
 
 Complexity is~ O(log n) on first run however after~ n/2 runs Complxity will be O(1) guaranteed.
 
