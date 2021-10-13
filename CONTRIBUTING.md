@@ -1,0 +1,2 @@
+ - For new ideas please create issue first
+ - Please be nice
