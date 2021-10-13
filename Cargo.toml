@@ -3,3 +3,6 @@ name = "stalin-binary-search"
 version = "0.0.1"
 authors = ["Miezhiko <Miezhiko@gmail.com>"]
 edition = "2018"
+
+[lib]
+doctest = false
