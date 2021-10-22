@@ -1,5 +1,7 @@
 [package]
 name            = "stalin-binary-search"
+description     = "alike binary search but any checking element which is not target one is eliminated"
+license         = "AGPLv3"
 version         = "0.0.1"
 authors         = ["Miezhiko <Miezhiko@gmail.com>"]
 edition         = "2021"
