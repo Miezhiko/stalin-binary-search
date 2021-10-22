@@ -8,6 +8,11 @@ impl<T: PartialOrd> StalinFind<T> for Vec<T> {
     self.len()
   }
 
+  #[inline]
+  fn is_empty(&self) -> bool {
+    self.is_empty()
+  }
+
   fn stalin(&mut self, i: T, l: usize, r: usize) -> Option<usize>
     where T: cmp::PartialEq + cmp::PartialOrd {
     let m = (l + r) / 2;
