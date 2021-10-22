@@ -4,6 +4,7 @@ description     = "alike binary search but any checking element which is not tar
 license         = "AGPL-3.0-only"
 version         = "0.0.1"
 authors         = ["Miezhiko <Miezhiko@gmail.com>"]
+repository      = "https://github.com/Miezhiko/stalin-binary-search"
 edition         = "2021"
 rust-version    = "1.56.0"
 
