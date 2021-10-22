@@ -1,3 +1,6 @@
+[![Rust](https://github.com/Miezhiko/stalin-binary-search/actions/workflows/rust.yml/badge.svg)](https://github.com/Miezhiko/stalin-binary-search/actions/workflows/rust.yml)
+[![crates.io version]][crates.io link]
+
 Stalin Binary Search
 ====================
 
@@ -77,3 +80,6 @@ mod tests {
   }
 }
 ```
+
+[crates.io link]: https://crates.io/crates/stalin-binary-search
+[crates.io version]: https://img.shields.io/crates/v/stalin-binary-search.svg
