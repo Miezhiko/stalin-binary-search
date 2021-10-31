@@ -8,7 +8,11 @@ Idea is based on Stalin Sort ![ss](https://i.redd.it/x9triplll1v11.jpg)
 
 It's alike binary search but any checking element which is not target one is eliminated.
 
-Complexity is~ O(log n) on first run however after~ n/2 runs Complxity will be O(1) guaranteed.
+The worst running complexity is ~N.
+The best running complexity is ~1.
+The average running complexity is ~N on first run, however after it there is a ~1 running complexity probabilistic guarantee.
+[The analysis](complexity_analysis.md).
+The memory complexity is always O(N).
 
 ```rust
 #[cfg(test)]
