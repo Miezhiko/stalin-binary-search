@@ -14,7 +14,7 @@ Everything boils to these main steps:
 3. The next step (as one could see by the source) is not really the "next" but rather a rare occasion so we'll leave it alone for a moment.
 4. Now we do another comparison of the searched element against the one to the **left** to the ***one we've just eliminated***. As the elements are in total sequential disorder, it's basically a roll of a dice. There's not much to predict of a last roll. But now we have 2 paths based on it:
     - either we recurse into the left part of an array => (l <=> m - 1) 
-    - or we recurse into the **kinda-right-part** of an array but **not quite**, as we join the ***m - 1***th element in both scenarios => (m - 1, r - 1)
+    - or we recurse into the **kinda-right-part** of an array but **not quite**, as we join the ***m - 1***th element in both scenarios => (m - 1 <=> r - 1)
 5. Just in case we've come too close to the left edge of an array, there is an additional check (see 3). Should this happen, the recursion pointers are refreshed with the arrays' edges. This saves the recursion from being indefinitely stuck.
 
 ![code visualization](pictures/mawa_sort_2.png)
@@ -35,7 +35,7 @@ These basics lead us to an extremely straightforward analysis:
     - And after that we roll the dise once again, being left with the same *~50%* chance to find it in *~log(N)* steps before having to trim *N/4* elements of the left part once again. 
 
     Which leads us to *~N* running time on an average case roughly. Further analysis is not that useful and could be obtained by large-scale simulations rather easily.
-4. Since the average successive (the element is present in an array) run takes *~N* steps, there is a probabilistic guarantee for a *~1* running time essentially after the ***very first run***.
+4. Since the average successive (the element is present in an array) run takes *~N* steps, there is a probabilistic guarantee for a *~1* running time essentially after the *~log(N)* successful runs, as each of them halves the array on average.
 
 ### Safety
 *not ready yet but there are quite dangerous bugs*
