@@ -20,7 +20,7 @@ impl<T: PartialOrd> StalinFind<T> for Vec<T> {
       Some(m)
     } else {
       self.remove(m);
-      if m == 0 {
+      if m == 0 || l > r {
         if self.is_empty() {
           None
         } else {
@@ -38,6 +38,28 @@ impl<T: PartialOrd> StalinFind<T> for Vec<T> {
 #[cfg(test)]
 mod tests {
   use super::*;
+
+  #[test]
+  fn randomised_test() {
+    // generate a random vector of length 0-n
+    let n = 100; // n was supposed to be a paramer of the function but whatever
+    let mut rng = rand::thread_rng();
+    let sought = rng.gen_range(0..n);
+    let amount = rng.gen_range(0..n);
+    let range = rand::distributions::uniform::Uniform::new(0, n);
+    let mut vector: Vec<u64> = (0..amount).map(|_| rng.sample(&range)).collect();
+
+    // check if the value is within the array
+    let i = vector.iter().position(|x| x == &sought);
+    if i.is_some() {
+      if let Some(find) = vector.stalin_find(sought) {
+        assert_eq!(vector[find], sought)
+      }
+    } else {
+      let find = vector.stalin_find(sought);
+      assert_eq!(find, None)
+    }
+  }
 
   #[test]
   fn find_on_sorted() {
