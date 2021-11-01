@@ -6,7 +6,7 @@ I guess, it's a reason good enough to make an attempt to fix both.
 
 ---
 ### The algorithm explanation
-![algorithm visualization](pictures/mawa_sort.png)
+![algorithm visualization](../pictures/mawa_sort.png)
 The logic is not as sophisticated as it might first seem due to writer's unbearable stylistic choices.  
 Everything boils to these main steps:
 1. Find the middle element and check it with the searched one. We found one? The job is done.
@@ -17,7 +17,7 @@ Everything boils to these main steps:
     - or we recurse into the **kinda-right-part** of an array but **not quite**, as we join the ***m - 1***th element in both scenarios => (m - 1 <=> r - 1)
 5. Just in case we've come too close to the left edge of an array, there is an additional check (see 3). Should this happen, the recursion pointers are refreshed with the arrays' edges. This saves the recursion from being indefinitely stuck.
 
-![code visualization](pictures/mawa_sort_2.png)
+![code visualization](../pictures/mawa_sort_2.png)
 
 Let's sum up:
 - Each step 1 element is being checked for the fact of being the searched one. If it's not, it's getting eliminated.
@@ -38,7 +38,7 @@ These basics lead us to an extremely straightforward analysis:
 4. Since the average successive (the element is present in an array) run takes *~N* steps, there is a probabilistic guarantee for a *~1* running time essentially after the *~log(N)* successful runs, as each of them halves the array on average.
 
 ### Safety
-*not ready yet but there are quite dangerous bugs*
+One of the most critical mistakes of a given design might be a possibility for pointer traversal with right-end falling through the left-end. A detailed analysis and a case visualization can be found [here](pointer_overcrossing_vulnerability.md).
 
 ### Practical research
 The experiments can easily be modeled with [this tool](https://yanefingon.github.io/Mawa-Search-Algorithm-Visualization/). It is strongly advised to create **arbitrary** arrays of random length for conclusive testing.

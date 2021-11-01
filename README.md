@@ -11,7 +11,7 @@ It's alike binary search but any checking element which is not target one is eli
 The worst running complexity is ~N. The best running complexity is ~1.  
 The average running complexity is ~N on first run, however after ~log(N) runs there is a ~1 complexity probabilistic guarantee.  
 Memory complexity is always O(N).  
-[The underlying analysis](complexity_analysis.md).  
+[The underlying analysis](docs/complexity_analysis.md).  
 
 
 ```rust
