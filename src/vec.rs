@@ -13,26 +13,35 @@ impl<T: PartialOrd> StalinFind<T> for Vec<T> {
     self.is_empty()
   }
 
-  fn stalin(&mut self, i: T, l: usize, r: usize) -> Option<usize>
-    where T: cmp::PartialEq + cmp::PartialOrd {
-    let m = (l + r) / 2;
-    if self[m] == i {
-      Some(m)
-    } else {
-      self.remove(m);
-      if m == 0 {
-        if self.is_empty() {
-          None
-        } else {
-          self.stalin(i, 0, self.len() - 1)
+    fn stalin(&mut self, i: T, l: usize, r: usize) -> Option<usize>
+    where T: cmp::PartialEq + cmp::PartialOrd 
+    {
+        let m = (l + r) / 2;
+        if self[m] == i 
+        {
+            Some(m)
         }
-      } else if self[m - 1] > i {
-        self.stalin(i, l, m - 1)
-      } else {
-        self.stalin(i, m - 1, r - 1)
-      }
+        else 
+        {
+            if l != r
+            {
+                if self[m] > i
+                {
+                    self.remove(m);
+                    // a special care is only needed for the left edge 
+                    // since "r" always is always bigger than "m" at least by 1
+                    if m == l { self.stalin(i, l, m) } 
+                    else { self.stalin(i, l, m - 1) }
+                } 
+                else 
+                {
+                    self.remove(m);
+                    self.stalin(i, m, r - 1)
+                }
+            }
+            else { None }
+        }
     }
-  }
 }
 
 #[cfg(test)]
