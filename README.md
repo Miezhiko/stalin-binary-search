@@ -8,10 +8,10 @@ Idea is based on Stalin Sort ![ss](https://i.redd.it/x9triplll1v11.jpg)
 
 It's alike binary search but any checking element which is not target one is eliminated.
 
-The worst running complexity is ~N. The best running complexity is ~1.  
-The average running complexity is ~N on first run, however after ~log(N) runs there is a ~1 complexity probabilistic guarantee.  
-Memory complexity is always O(N).  
-[The underlying analysis](docs/complexity_analysis.md).  
+Complexity is~ O(log n) on first run however after~ n/2 runs Complxity will be O(1) guaranteed.
+Should not fail on unsorted.
+
+(there analysis not from Fingon but with pictures and fancy text targetting working of this on unsorted arrays [The underlying analysis](docs/complexity_analysis.md).)
 
 
 ```rust
