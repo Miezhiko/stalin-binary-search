@@ -38,7 +38,7 @@ These basics lead us to an extremely straightforward analysis:
 4. Since the average successive (the element is present in an array) run takes *~N* steps, there is a probabilistic guarantee for a *~1* running time essentially after the *~log(N)* successful runs, as each of them halves the array on average.
 
 ### Safety
-One of the most critical mistakes of a given design might be a possibility for pointer traversal with right-end falling through the left-end. A detailed analysis and a case visualization can be found [here](pointer_overcrossing_vulnerability.md).
+One of the most critical mistakes of a given design might be a possibility for pointer traversal with right-end falling through the left-end. A detailed analysis and a case visualization can be found [here](overcrossing_pointers_vulnerability.md).
 
 ### Practical research
 The experiments can easily be modeled with [this tool](https://yanefingon.github.io/Mawa-Search-Algorithm-Visualization/). It is strongly advised to create **arbitrary** arrays of random length for conclusive testing.
