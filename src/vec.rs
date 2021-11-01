@@ -124,4 +124,17 @@ mod tests {
       vec![2],
     );
   }
+
+  #[test]
+  fn find_not_fingon() {
+    let mut unsorted = vec![12, 11, 4, 5, 7, 8, 2];
+    assert_eq!(
+      unsorted.stalin_find(9),
+      None,
+    );
+    assert_eq!(
+      unsorted,
+      vec![],
+    );
+  }
 }
