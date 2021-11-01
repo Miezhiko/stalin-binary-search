@@ -38,6 +38,7 @@ impl<T: PartialOrd> StalinFind<T> for Vec<T> {
 #[cfg(test)]
 mod tests {
   use super::*;
+  use rand::Rng;
 
   #[test]
   fn randomised_test() {
