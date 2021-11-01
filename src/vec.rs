@@ -44,24 +44,22 @@ mod tests {
     // generate a random vector of length 0-n
     let n = 100; // n was supposed to be a paramer of the function but whatever
     let mut rng = rand::thread_rng();
-    let sought = rng.gen_range(0, n);
-    let amount = rng.gen_range(0, n);
-    let range = Uniform::new(0, n);
+    let sought = rng.gen_range(0..n);
+    let amount = rng.gen_range(0..n);
+    let range = rand::distributions::uniform::Uniform::new(0, n);
     let mut vector: Vec<u64> = (0..amount).map(|_| rng.sample(&range)).collect();
 
     // check if the value is within the array
     let i = vector.iter().position(|x| x == &sought);
     if i.is_some() {
-        // IM NOT SURE HERE AS WELL THE LANGUAGE IS STUPID EVERYTHING IS STUPID I HATE IT
-        if let Some(find) = vector.stalin_find(sought) {
-            assert_eq!(vector[find], sought)
-        }
+      if let Some(find) = vector.stalin_find(sought) {
+        assert_eq!(vector[find], sought)
+      }
+    } else {
+      let find = vector.stalin_find(sought);
+      assert_eq!(find, None)
     }
-    else {
-        let find = vector.stalin_find(sought);
-        assert_eq!(find, None)
-    }
-}
+  }
 
   #[test]
   fn find_on_sorted() {
