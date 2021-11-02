@@ -2,7 +2,7 @@
 name            = "stalin-binary-search"
 description     = "alike binary search but any checking element which is not target one is eliminated"
 license         = "AGPL-3.0-only"
-version         = "0.0.2"
+version         = "0.0.3"
 authors         = ["Miezhiko <Miezhiko@gmail.com>"]
 repository      = "https://github.com/Miezhiko/stalin-binary-search"
 edition         = "2021"
@@ -12,4 +12,4 @@ rust-version    = "1.56.0"
 doctest = false
 
 [dev-dependencies]
-rand = "*"
+rand = "0.8"
